@@ -4,7 +4,11 @@ import CardContact from "./ContactCard";
 import { Link } from "react-router-dom";
 
 const ContactList = (props) => {
-  const renderContactList = props.contacts.map((contact) => {
+  const contacts = [
+    { id: 1, name: "vishnu", email: "vishnu@gmail.com" },
+    { id: 2, name: "kunal", email: "kunal@gmail.com" },
+  ];
+  const renderContactList = contacts.map((contact) => {
     return <CardContact contact={contact} />;
   });
   return (
