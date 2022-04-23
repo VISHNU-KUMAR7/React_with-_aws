@@ -1,7 +1,10 @@
 import React from "react";
 import user from "../images/users.png";
-const ContactDetails = () => {
+import { useLocation } from "react-router";
+const ContactDetails = (props) => {
   const contact = { id: 1, name: "vishnu", email: "vishnu@gmail.com" };
+  const { state } = useLocation();
+  const { id, name, email } = state.contact;
   return (
     <>
       <div className="main">
@@ -11,8 +14,8 @@ const ContactDetails = () => {
             <img src={user} alt="user" />
           </div>
           <div className="content">
-            <div className="header">{contact.name}</div>
-            <div className="header">{contact.email}</div>
+            <div className="header">{name}</div>
+            <div className="header">{email}</div>
           </div>
         </div>
       </div>

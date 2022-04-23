@@ -1,16 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import user from "../images/user.png";
+import { useNavigate } from "react-router";
 const CardContact = (props) => {
   const { id, name, email } = props.contact;
+  const navigate = useNavigate();
+
+  const detail = () => {
+    navigate(`/contact/${id}`, { state: { contact: props.contact } });
+  };
   return (
     <div className="item">
       <img className="ui avatar image" src={user} alt="user" />
       <div className="content">
-        <Link to={`/contact/${id}`}>
+        <a onClick={detail}>
           <div className="header">{name}</div>
           <div>{email}</div>
-        </Link>
+        </a>
       </div>
       <i
         className="trash alternate outline icon"
