@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import { v4 as uuidv4 } from "uuid";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+} from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import AddContact from "./components/AddContact";
@@ -24,9 +30,19 @@ function App() {
   }, [contacts]);
   return (
     <>
-      <Header />
-      <AddContact addContactHandler={addContactHandler} />
-      <ContactList contacts={contacts} />
+      <Router>
+        <Header />
+        <Routes>
+          <Route
+            path="/add"
+            element={<AddContact addContactHandler={addContactHandler} />}
+            exact
+          />
+          <Route path="/" element={<ContactList contacts={contacts} exact />} />
+          {/* <AddContact addContactHandler={addContactHandler} />
+            <ContactList contacts={contacts} /> */}
+        </Routes>
+      </Router>
     </>
   );
 }

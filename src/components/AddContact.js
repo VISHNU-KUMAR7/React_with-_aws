@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 class AddContact extends React.Component {
   state = {
@@ -18,6 +19,7 @@ class AddContact extends React.Component {
   render() {
     return (
       <div className="ui main">
+        <Outlet />
         <h2>Add Contact</h2>
 
         <form className="ui form" onSubmit={this.add}>
