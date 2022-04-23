@@ -1,7 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router";
-import AddContact_navigate from "./AddContact_navigate";
 
 class AddContact extends React.Component {
   state = {
@@ -17,7 +16,6 @@ class AddContact extends React.Component {
     }
     this.props.addContactHandler(this.state);
     this.setState({ name: "", email: "" });
-    <AddContact_navigate />;
   };
   render() {
     return (

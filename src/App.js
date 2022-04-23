@@ -11,6 +11,7 @@ import "./App.css";
 import Header from "./components/Header";
 import AddContact from "./components/AddContact";
 import ContactList from "./components/ContactList";
+import ContactDetails from "./components/ContactDetails";
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -41,6 +42,7 @@ function App() {
           <Route path="/" element={<ContactList contacts={contacts} />} />
           {/* <AddContact addContactHandler={addContactHandler} />
             <ContactList contacts={contacts} /> */}
+          <Route path="/contact/:id" element={<ContactDetails />} exact />
         </Routes>
       </Router>
     </>
