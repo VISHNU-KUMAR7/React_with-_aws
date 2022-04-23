@@ -38,7 +38,7 @@ function App() {
             element={<AddContact addContactHandler={addContactHandler} />}
             exact
           />
-          <Route path="/" element={<ContactList contacts={contacts} exact />} />
+          <Route path="/" element={<ContactList contacts={contacts} />} />
           {/* <AddContact addContactHandler={addContactHandler} />
             <ContactList contacts={contacts} /> */}
         </Routes>
